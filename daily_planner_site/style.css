@@ -1,0 +1,220 @@
+/* ===== НАСТРАИВАЕМЫЕ СТИЛИ ===== */
+:root {
+    --primary: #4a6fa5;
+    --secondary: #6b8cbc;
+    --accent: #ff6b6b;
+    --light: #f5f7fa;
+    --dark: #2c3e50;
+    --gray: #95a5a6;
+    --border: #e1e5eb;
+    --text: #333333;
+    --background: #f0f2f5;
+    --container-bg: #ffffff;
+    --header-bg: var(--primary);
+    --header-text: #ffffff;
+    --task-bg: #ffffff;
+    --task-border: var(--border);
+    --completed-task: #e0e0e0;
+    --button-bg: var(--primary);
+    --button-text: #ffffff;
+    --button-hover: var(--secondary);
+    --filter-active-bg: var(--primary);
+    --filter-active-text: #ffffff;
+    --filter-inactive-bg: #ffffff;
+    --filter-inactive-text: var(--dark);
+    --filter-border: var(--border);
+    --meta-text: var(--gray);
+    --due-date: var(--accent);
+}
+
+/* ===== ОСНОВНЫЕ СТИЛИ ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    background-color: var(--background);
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--container-bg);
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+
+header {
+    background: var(--header-bg);
+    color: var(--header-text);
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.current-date {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.task-form {
+    display: flex;
+    padding: 15px;
+    border-bottom: 1px solid var(--border);
+    background: #f9fbfd;
+}
+
+#taskInput {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#addBtn {
+    background: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    border-radius: 5px;
+    padding: 0 20px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#addBtn:hover {
+    background: var(--button-hover);
+}
+
+.filters {
+    display: flex;
+    padding: 10px 15px;
+    background: #f0f4f8;
+    border-bottom: 1px solid var(--border);
+}
+
+.filter-btn {
+    padding: 8px 12px;
+    margin-right: 5px;
+    background: var(--filter-inactive-bg);
+    color: var(--filter-inactive-text);
+    border: 1px solid var(--filter-border);
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.filter-btn.active {
+    background: var(--filter-active-bg);
+    color: var(--filter-active-text);
+    border-color: var(--filter-active-bg);
+}
+
+#taskList {
+    list-style: none;
+    padding: 15px;
+}
+
+.task-item {
+    padding: 12px;
+    border: 1px solid var(--task-border);
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background: var(--task-bg);
+}
+
+.task-item.completed {
+    background: var(--completed-task);
+}
+
+.task-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.task-checkbox {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.task-text {
+    flex: 1;
+    font-size: 16px;
+}
+
+.task-text.completed {
+    text-decoration: line-through;
+    color: var(--gray);
+}
+
+.task-actions {
+    display: flex;
+}
+
+.delete-btn, .date-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 8px;
+    color: var(--gray);
+    font-size: 16px;
+}
+
+.delete-btn:hover, .date-btn:hover {
+    color: var(--accent);
+}
+
+.task-meta {
+    display: flex;
+    font-size: 12px;
+    color: var(--meta-text);
+}
+
+.created-date {
+    margin-right: 15px;
+}
+
+.due-date {
+    color: var(--due-date);
+    font-weight: bold;
+}
+
+.no-tasks {
+    text-align: center;
+    padding: 20px;
+    color: var(--gray);
+}
+
+/* ===== АДАПТИВНОСТЬ ===== */
+@media (max-width: 600px) {
+    .task-form {
+        flex-direction: column;
+    }
+    
+    #addBtn {
+        margin: 10px 0 0 0;
+        padding: 12px;
+    }
+    
+    .filters {
+        flex-wrap: wrap;
+    }
+    
+    .filter-btn {
+        margin-bottom: 5px;
+    }
+}

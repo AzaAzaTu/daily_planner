@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Простой Ежедневник</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Мой Ежедневник</h1>
+            <div class="current-date" id="currentDate"></div>
+        </header>
+        
+        <div class="task-form">
+            <input type="text" id="taskInput" placeholder="Добавить новую задачу...">
+            <button id="addBtn">Добавить</button>
+        </div>
+        
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">Все</button>
+            <button class="filter-btn" data-filter="today">Сегодня</button>
+            <button class="filter-btn" data-filter="tomorrow">Завтра</button>
+            <button class="filter-btn" data-filter="completed">Выполнено</button>
+        </div>
+        
+        <ul id="taskList"></ul>
+    </div>
+
+</body>
+</html>
