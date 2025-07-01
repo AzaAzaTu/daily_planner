@@ -1,2 +1,2 @@
 # daily_planner
-Daily planner made for lerning practice  
+Daily planner made for learning practice  
