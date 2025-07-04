@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const currentDateEl = document.getElementById('currentDate');
     const filterButtons = document.querySelectorAll('.filter-btn');
     
-    // Инициализация приложения
+    // Инициализация сайта
     displayCurrentDate();
     loadTasks();
     renderTasks();
@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         data-id="${task.id}">
                     <div class="task-text ${task.completed ? 'completed' : ''}">${task.text}</div>
                     <div class="task-actions">
-                        <button class="date-btn" data-id="${task.id}">📅</button>
+                        <button class="date-btn" data-id="${task.id}">📆</button>
                         <button class="delete-btn" data-id="${task.id}">✕</button>
                     </div>
                 </div>
